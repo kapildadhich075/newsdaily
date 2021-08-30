@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "785533381942",
+    "project_id": "newsdaily-de344",
+    "storage_bucket": "newsdaily-de344.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785533381942:android:cb535b340e4ec7b85e5797",
+        "android_client_info": {
+          "package_name": "com.example.newsdaily"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785533381942-dt2hjtk5c14qdmbb9djntjvc40so35v5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdUoZDzaoz3nbZYYJ3NikdGZ3LCjulCAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785533381942-dt2hjtk5c14qdmbb9djntjvc40so35v5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
