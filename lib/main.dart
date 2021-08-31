@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:newsdaily/Screens/HomeScreen.dart';
 import 'package:newsdaily/Screens/Login_Screen.dart';
 import 'package:newsdaily/Screens/NewsScreen.dart';
+import 'package:newsdaily/Screens/NewsView.dart';
 import 'package:newsdaily/Screens/SignUp.dart';
 
 void main() async {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         NewsScreen.page: (context) => NewsScreen(),
         HomeScreen.page: (context) => HomeScreen(),
         SignUpScreen.page: (context) => SignUpScreen(),
+        NewsView.page: (context) => NewsView(),
       },
     );
   }

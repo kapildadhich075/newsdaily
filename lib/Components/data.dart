@@ -6,7 +6,7 @@ List<CategoryNews> getCategories() {
 
   //1
   categoryNews = new CategoryNews();
-  categoryNews.categoryName = "Business";
+  categoryNews.categoryName = "Busines";
   categoryNews.imageUrl =
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80";
   category.add(categoryNews);

@@ -18,6 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _auth = FirebaseAuth.instance;
   String? email;
   String? password;
+  String? name;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +50,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
               textAlign: TextAlign.center,
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your E-mail',
+                hintStyle: TextStyle(color: Colors.grey),
+              ),
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            TextField(
+              style: TextStyle(color: Colors.black),
+              onChanged: (value) {
+                name = value;
+              },
+              keyboardType: TextInputType.name,
+              textAlign: TextAlign.center,
+              decoration: kTextFieldDecoration.copyWith(
+                hintText: 'Enter your full Name',
                 hintStyle: TextStyle(color: Colors.grey),
               ),
             ),
