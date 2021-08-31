@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:newsdaily/Components/Button.dart';
 import 'package:newsdaily/Screens/NewsScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Constants.dart';
 import 'Login_Screen.dart';
@@ -16,6 +17,8 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final _auth = FirebaseAuth.instance;
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passcontroller = TextEditingController();
   String? email;
   String? password;
   String? name;
@@ -48,6 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               },
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
+              controller: emailcontroller,
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your E-mail',
                 hintStyle: TextStyle(color: Colors.grey),
@@ -66,6 +70,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: TextStyle(color: Colors.black),
               keyboardType: TextInputType.visiblePassword,
               textAlign: TextAlign.center,
+              controller: passcontroller,
               obscureText: true,
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your Password',
@@ -79,6 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               buttonName: 'Sign-Up',
               onPressed: () async {
                 setState(() {});
+
                 try {
                   final user = await _auth
                       .createUserWithEmailAndPassword(
@@ -101,6 +107,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   });
 
                   if (user != null) {
+                    final SharedPreferences sharedPreferences =
+                        await SharedPreferences.getInstance();
+                    sharedPreferences.setString('email', emailcontroller.text);
                     Navigator.pushNamed(context, NewsScreen.page);
                   }
                   setState(() {});

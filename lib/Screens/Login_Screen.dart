@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:newsdaily/Components/Button.dart';
 import 'package:newsdaily/Screens/NewsScreen.dart';
 import 'package:newsdaily/Screens/SignUp.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../Constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -99,6 +100,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   });
 
                   if (user != null) {
+                    Navigator.pushNamed(context, NewsScreen.page);
+                    final SharedPreferences sharedPreferences =
+                        await SharedPreferences.getInstance();
+                    sharedPreferences.setString('email', emailController.text);
                     Navigator.pushNamed(context, NewsScreen.page);
                   }
                   setState(() {});
