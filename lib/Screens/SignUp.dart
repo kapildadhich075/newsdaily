@@ -56,18 +56,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
             SizedBox(
               height: 8.0,
             ),
-            TextField(
-              style: TextStyle(color: Colors.black),
-              onChanged: (value) {
-                name = value;
-              },
-              keyboardType: TextInputType.name,
-              textAlign: TextAlign.center,
-              decoration: kTextFieldDecoration.copyWith(
-                hintText: 'Enter your full Name',
-                hintStyle: TextStyle(color: Colors.grey),
-              ),
-            ),
             SizedBox(
               height: 8.0,
             ),

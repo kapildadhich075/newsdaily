@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:newsdaily/Components/Button.dart';
 import 'package:newsdaily/Screens/NewsScreen.dart';
 import 'package:newsdaily/Screens/SignUp.dart';
-
 import '../Constants.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,6 +15,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
   String? email;
   String? password;
 
@@ -47,6 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
               },
               keyboardType: TextInputType.emailAddress,
               textAlign: TextAlign.center,
+              controller: emailController,
               decoration: kTextFieldDecoration.copyWith(
                 hintText: 'Enter your E-mail',
                 hintStyle: TextStyle(color: Colors.grey),
@@ -60,6 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 password = value;
               },
               style: TextStyle(color: Colors.black),
+              controller: passController,
               keyboardType: TextInputType.visiblePassword,
               textAlign: TextAlign.center,
               obscureText: true,
@@ -74,7 +77,6 @@ class _LoginScreenState extends State<LoginScreen> {
             Button(
               buttonName: 'Log In',
               onPressed: () async {
-                setState(() {});
                 try {
                   final user = await _auth
                       .signInWithEmailAndPassword(

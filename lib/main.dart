@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NewsDaily',
-      initialRoute: NewsScreen.page,
+      initialRoute: HomeScreen.page,
       routes: {
         LoginScreen.page: (context) => LoginScreen(),
         NewsScreen.page: (context) => NewsScreen(),
